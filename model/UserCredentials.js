@@ -1,5 +1,5 @@
 const mongoose=require("mongoose")
-const url="mongodb+srv://shruthi:test123@cluster0.rpq7s.mongodb.net/intDB?retryWrites=true&w=majority&appName=Cluster0"
+const url=`mongodb+srv://${process.env.TEST_DB_USER}:${process.env.TEST_DB_PW}@cluster0.rpq7s.mongodb.net/${process.env.TEST_DB}?retryWrites=true&w=majority&appName=Cluster0`
 const connect=mongoose.connect(url).then((res)=>console.log("connected successfully")).catch((err)=>console.log(err))
 const valid=require("validator")
 const credentialsSchema=new mongoose.Schema({

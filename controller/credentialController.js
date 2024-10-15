@@ -24,7 +24,7 @@ const signIn=async (req,res)=>{
     console.log(findUser)
     const isUser=await bcrypt.compare(data.password,findUser.password)
     if(isUser){
-        const token=await jwt.sign(data.username,"jamesbond")
+        const token=await jwt.sign(data.username,process.env.TEST_JWT_KEY)
         console.log(token)
         res.cookie("accesstoken",token,{maxAge:6000000000000})
         res.send({
