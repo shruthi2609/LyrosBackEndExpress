@@ -5,7 +5,7 @@ const cookieparser=require("cookie-parser")
 require("dotenv").config()
 const cors=require("cors")
 app.use(cookieparser())
-app.use(cors({origin:"http://localhost:3000",credentials:true}))
+app.use(cors({origin:"https://lyrosreactapp.netlify.app",credentials:true}))
 app.use(bodyparser.json())
 
 const contactsRoute=require("./route/contactManagerFinal")
